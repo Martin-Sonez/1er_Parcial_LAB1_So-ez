@@ -38,7 +38,7 @@ void listarPrestamo (ePrestamos Prestamo,eClientes vecClientes[],int tamClientes
  * \param tamClientes es el tamaño de clientes.
  *
  */
-int reanudarPrestamo(ePrestamos vecPrestamos[],int tamPrestamos,int prestamoId,eClientes vecClientes[],int tamClientes);
+int reanudarPrestamo(ePrestamos vecPrestamos[],int tamPrestamos,eClientes vecClientes[],int tamClientes);
 
 /** \brief Muestra una lista con los prestamos saldados y da la opcion de reanudarlos.
  *
@@ -50,7 +50,7 @@ int reanudarPrestamo(ePrestamos vecPrestamos[],int tamPrestamos,int prestamoId,e
 
  *
  */
-int saldarPrestamo(ePrestamos vecPrestamos[],int tamPrestamos,int prestamoId,eClientes vecClientes[],int tamClientes);
+int saldarPrestamo(ePrestamos vecPrestamos[],int tamPrestamos,eClientes vecClientes[],int tamClientes);
 
 /** \brief Muestra a todos los prestamos activos.
  *
@@ -135,7 +135,7 @@ int cantidadPrestamosSaldados(ePrestamos vecPrestamos[],int tamPrestamos);
  * \param tamPrestamos es el tamaño de prestamos.
  * \return retorna el indice del prestamo buscado.
  */
-int buscarPrestamoId(ePrestamos vecPrestamos[],int tamPrestamos,int* idPrestamo,eClientes vecClientes[],int tamClientes);
+//int buscarPrestamoId(ePrestamos vecPrestamos[],int tamPrestamos,int* idPrestamo,eClientes vecClientes[],int tamClientes);
 
 /** \brief Agrega prestamos a un cliente seleccionado.
  *
@@ -192,6 +192,10 @@ int buscarPrestamoActivoId(ePrestamos vecPrestamos[],int tamPrestamos,int* idPre
  * \return retorna la cantidad de prestamos activos.
  */
 int cantidadPrestamosActivos(ePrestamos vecPrestamos[],int tamPrestamos);
+
+int cantidadPrestamosMaxCliente(ePrestamos vecPrestamos[],int tamPrestamos,int clienteId);
+
+int cantidadMaxPrestamos(ePrestamos vecPrestamos[],int tamPrestamos);
 
 
 #endif // PRESTAMOS_H_INCLUDED

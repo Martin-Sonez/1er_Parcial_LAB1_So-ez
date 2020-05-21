@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1589770641 source:c:\users\user\desktop\parcial_prestamos_soñez_1e\clientes.c
+1590098751 source:c:\users\user\desktop\parcial_prestamos_soñez_1e\clientes.c
 	<string.h>
 	<stdio.h>
 	<ctype.h>
@@ -10,12 +10,12 @@
 
 1589770641 c:\users\user\desktop\parcial_prestamos_soñez_1e\utn.h
 
-1589770641 c:\users\user\desktop\parcial_prestamos_soñez_1e\prestamos.h
+1590099167 c:\users\user\desktop\parcial_prestamos_soñez_1e\prestamos.h
 	"clientes.h"
 
-1589770641 c:\users\user\desktop\parcial_prestamos_soñez_1e\clientes.h
+1590096522 c:\users\user\desktop\parcial_prestamos_soñez_1e\clientes.h
 
-1589770641 source:c:\users\user\desktop\parcial_prestamos_soñez_1e\informes.c
+1590102264 source:c:\users\user\desktop\parcial_prestamos_soñez_1e\informes.c
 	<string.h>
 	<stdio.h>
 	<ctype.h>
@@ -25,9 +25,9 @@
 	"clientes.h"
 	"informes.h"
 
-1589770641 c:\users\user\desktop\parcial_prestamos_soñez_1e\informes.h
+1590101532 c:\users\user\desktop\parcial_prestamos_soñez_1e\informes.h
 
-1589770641 source:c:\users\user\desktop\parcial_prestamos_soñez_1e\main.c
+1590096701 source:c:\users\user\desktop\parcial_prestamos_soñez_1e\main.c
 	<string.h>
 	<stdio.h>
 	<ctype.h>
@@ -37,7 +37,7 @@
 	"informes.h"
 	"clientes.h"
 
-1589770641 source:c:\users\user\desktop\parcial_prestamos_soñez_1e\prestamos.c
+1590100707 source:c:\users\user\desktop\parcial_prestamos_soñez_1e\prestamos.c
 	<string.h>
 	<stdio.h>
 	<ctype.h>
@@ -46,7 +46,61 @@
 	"prestamos.h"
 	"clientes.h"
 
-1589770641 source:c:\users\user\desktop\parcial_prestamos_soñez_1e\utn.c
+1590094239 source:c:\users\user\desktop\parcial_prestamos_soñez_1e\utn.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	"utn.h"
+
+1589770641 source:c:\users\user\desktop\utn 2020\parcial_prestamos_soñez_1e\clientes.c
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	"utn.h"
+	"prestamos.h"
+	"clientes.h"
+
+1589770641 c:\users\user\desktop\utn 2020\parcial_prestamos_soñez_1e\utn.h
+
+1589770641 c:\users\user\desktop\utn 2020\parcial_prestamos_soñez_1e\prestamos.h
+	"clientes.h"
+
+1589770641 c:\users\user\desktop\utn 2020\parcial_prestamos_soñez_1e\clientes.h
+
+1589770641 source:c:\users\user\desktop\utn 2020\parcial_prestamos_soñez_1e\informes.c
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	"utn.h"
+	"prestamos.h"
+	"clientes.h"
+	"informes.h"
+
+1589770641 c:\users\user\desktop\utn 2020\parcial_prestamos_soñez_1e\informes.h
+
+1589770641 source:c:\users\user\desktop\utn 2020\parcial_prestamos_soñez_1e\main.c
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	"utn.h"
+	"prestamos.h"
+	"informes.h"
+	"clientes.h"
+
+1589770641 source:c:\users\user\desktop\utn 2020\parcial_prestamos_soñez_1e\prestamos.c
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	<stdlib.h>
+	"utn.h"
+	"prestamos.h"
+	"clientes.h"
+
+1590046614 source:c:\users\user\desktop\utn 2020\parcial_prestamos_soñez_1e\utn.c
 	<stdlib.h>
 	<string.h>
 	<stdio.h>

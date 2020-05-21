@@ -100,7 +100,7 @@ int altaPrestamo(ePrestamos vecPrestamos[],int tamPrestamos,eClientes vecCliente
     return emptySpace;
 }
 
-int saldarPrestamo(ePrestamos vecPrestamos[],int tamPrestamos,int prestamoId,eClientes vecClientes[],int tamClientes)
+int saldarPrestamo(ePrestamos vecPrestamos[],int tamPrestamos,eClientes vecClientes[],int tamClientes)
 {
     int idPrestamo;
     int contActivos;
@@ -134,7 +134,7 @@ int saldarPrestamo(ePrestamos vecPrestamos[],int tamPrestamos,int prestamoId,eCl
     return indice;
 }
 
-int reanudarPrestamo(ePrestamos vecPrestamos[],int tamPrestamos,int prestamoId,eClientes vecClientes[],int tamClientes)
+int reanudarPrestamo(ePrestamos vecPrestamos[],int tamPrestamos,eClientes vecClientes[],int tamClientes)
 {
     int idPrestamo;
     int indice;
@@ -233,6 +233,44 @@ int cantidadPrestamosCliente(ePrestamos vecPrestamos[],int tamPrestamos,int clie
     return contPrestamos;
 }
 
+int cantidadPrestamosMaxCliente(ePrestamos vecPrestamos[],int tamPrestamos,int clienteId)
+{
+    int contPrestamos=0;
+    for(int i=0; i<tamPrestamos; i++)
+    {
+
+
+        if(vecPrestamos[i].prestamoEstado==ACTIVO || vecPrestamos[i].prestamoEstado==SALDADO)
+        {if(vecPrestamos[i].clienteId==clienteId)
+        {
+            contPrestamos++;
+        }
+        }
+    }
+    return contPrestamos;
+}
+
+
+int cantidadMaxPrestamos(ePrestamos vecPrestamos[],int tamPrestamos)
+{
+    int contActivos=0;
+
+    for(int i=0; i<tamPrestamos; i++)
+    {
+        if(vecPrestamos[i].prestamoEstado==ACTIVO)
+        {
+            contActivos++;
+            if(vecPrestamos[i].prestamoEstado==SALDADO)
+            {
+                contActivos++;
+            }
+        }
+    }
+    return contActivos;
+}
+
+
+
 void listarPrestamosCliente(eClientes vecClientes[],ePrestamos vecPrestamos[],int tamClientes,int tamPrestamos,int* clienteId)
 {
     encabezadoInfoPrestamo();
@@ -276,7 +314,7 @@ int cantidadPrestamosSaldados(ePrestamos vecPrestamos[],int tamPrestamos)
     return contSaldados;
 }
 
-int buscarPrestamoId(ePrestamos vecPrestamos[],int tamPrestamos,int* idPrestamo,eClientes vecClientes[],int tamClientes)
+/*int buscarPrestamoId(ePrestamos vecPrestamos[],int tamPrestamos,int* idPrestamo,eClientes vecClientes[],int tamClientes)
 {
 
     *idPrestamo=inputInt("\nIngrese numero de prestamo: ");
@@ -302,7 +340,7 @@ int buscarPrestamoId(ePrestamos vecPrestamos[],int tamPrestamos,int* idPrestamo,
     }
 
     return indice;
-}
+}*/
 
 int buscarPrestamoActivoId(ePrestamos vecPrestamos[],int tamPrestamos,int* idPrestamo,eClientes vecClientes[],int tamClientes)
 {
@@ -382,5 +420,7 @@ int buscarPrestamoSaldadoId(ePrestamos vecPrestamos[],int tamPrestamos,int* idPr
 
 void encabezadoInfoPrestamo()
 {
+    mensaje("-----------------------------------------------------------------\n");
     printf("ID PRESTAMO   ID CLIENTE     CUIL CLIENTE      IMPORTE     CUOTAS");
+    mensaje("\n-----------------------------------------------------------------");
 }

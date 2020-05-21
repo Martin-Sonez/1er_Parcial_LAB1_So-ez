@@ -26,7 +26,7 @@ int main()
 
         case 2:
             if(clientesActivos(vecClientes,CLIENTESTAM)>0)
-                modCliente(vecClientes,CLIENTESTAM,id,vecPrestamos,PRESTAMOSTAM);
+                modCliente(vecClientes,CLIENTESTAM,vecPrestamos,PRESTAMOSTAM);
             else
                 mensaje("\nNo hay clientes activos, por lo que no se puede realizar una modificacion.\n");
 
@@ -51,14 +51,14 @@ int main()
             break;
         case 5:
             if(prestamosActivos(vecPrestamos,PRESTAMOSTAM)>0)
-                saldarPrestamo(vecPrestamos,PRESTAMOSTAM,id,vecClientes,CLIENTESTAM);
+                saldarPrestamo(vecPrestamos,PRESTAMOSTAM,vecClientes,CLIENTESTAM);
 
             else
                 mensaje("No hay prestamos para saldar");
             break;
         case 6:
             if(clientesActivos(vecClientes,CLIENTESTAM)>0)
-                reanudarPrestamo(vecPrestamos,PRESTAMOSTAM,id,vecClientes,CLIENTESTAM);
+                reanudarPrestamo(vecPrestamos,PRESTAMOSTAM,vecClientes,CLIENTESTAM);
             else
                 mensaje("No hay prestamos para reanudar");
             break;

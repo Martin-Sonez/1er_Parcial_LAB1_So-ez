@@ -66,5 +66,8 @@ void clienteMaxPrestamosActivos(eClientes vecClientes[],ePrestamos vecPrestamos[
  *
  */
 void prestamosMayores1000(ePrestamos vecPrestamos[],eClientes vecClientes[],int tamPrestamos,int tamClientes);
+void clienteMaxPrestamos(eClientes vecClientes[],ePrestamos vecPrestamos[],int tamClientes,int tamPrestamos);
+void prestamosCuotas(ePrestamos vecPrestamos[],eClientes vecClientes[],int tamPrestamos,int tamClientes);
+
 
 #endif // INFORMES_H_INCLUDED

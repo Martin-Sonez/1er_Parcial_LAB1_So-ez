@@ -132,7 +132,7 @@ int bajaCliente(eClientes vecClientes[],int tamClientes,ePrestamos vecPrestamos[
  * \param id es el id del cliente a modificar.
  * \return retorna el indice del cliente modificado.
  */
-int modCliente(eClientes vecClientes[],int tamClientes,int id,ePrestamos vecPrestamos[],int tamPrestamos);
+int modCliente(eClientes vecClientes[],int tamClientes,ePrestamos vecPrestamos[],int tamPrestamos);
 
 /** \brief Busca un cliente mediante su id.
  *
@@ -151,7 +151,7 @@ int buscarClienteId(eClientes vecClientes[],int tamClientes,int* idCliente);
 
  * \return retorna la cantidad de clientes.
  */
-int contTotalClientes(eClientes vecClientes[],int tamClientes);
+//int contTotalClientes(eClientes vecClientes[],int tamClientes);
 
 /** \brief Muestra el header de clientes saldados.
  */

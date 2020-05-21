@@ -25,6 +25,10 @@ void informesClientes(eClientes vecClientes[],ePrestamos vecPrestamos[],int tamC
             break;
 
         case 3:
+
+            clienteMaxPrestamos(vecClientes,vecPrestamos,tamClientes,tamPrestamos);
+            break;
+        case 4:
             seguir='n';
             break;
 
@@ -39,8 +43,8 @@ void informesClientes(eClientes vecClientes[],ePrestamos vecPrestamos[],int tamC
 int menuInformesClientes()
 {
     int opcion;
-    printf("\n1-Cliente con mas prestamos activos\n2-Cliente con mas prestamos saldados\n3-Salir\n");
-    opcion=inputValidInt("\nIngrese una opcion: \n","\nIngrese una opcion valida: \n",1,3,3);
+    printf("\n1-Cliente con mas prestamos activos\n2-Cliente con mas prestamos saldados\n3-Cliente con mas prestamos\n4-Salir");
+    opcion=inputValidInt("\nIngrese una opcion: \n","\nIngrese una opcion valida: \n",1,4,3);
     return opcion;
 }
 
@@ -58,6 +62,9 @@ void informesPrestamos(eClientes vecClientes[],ePrestamos vecPrestamos[],int tam
             break;
 
         case 2:
+            prestamosCuotas(vecPrestamos,vecClientes,tamPrestamos,tamClientes);
+            break;
+        case 3:
             seguir='n';
             break;
 
@@ -187,10 +194,90 @@ void clienteMaxPrestamosActivos(eClientes vecClientes[],ePrestamos vecPrestamos[
 
 }
 
+void clienteMaxPrestamos(eClientes vecClientes[],ePrestamos vecPrestamos[],int tamClientes,int tamPrestamos)
+{
+    int cont;
+    int maximo=0;
+    int idMax=0;
+    int contValidacion=0;
+    contValidacion=cantidadMaxPrestamos(vecPrestamos,tamPrestamos);
+
+    if(contValidacion>0)
+    {
+        for(int i=0; i<tamClientes; i++)
+        {
+            cont=0;
+            for(int j=0; j<tamPrestamos; j++)
+            {
+                if(vecPrestamos[j].clienteId==vecClientes[i].clienteId && vecPrestamos[j].prestamoEstado==SALDADO)
+                {
+                    cont++;
+                }
+
+                 if(vecPrestamos[j].clienteId==vecClientes[i].clienteId && vecPrestamos[j].prestamoEstado==ACTIVO)
+                    {
+                        cont++;
+                    }
+
+            }
+
+            if(i==0)
+            {
+                maximo = cont;
+            }
+            else if(cont>maximo)
+            {
+                maximo=cont;
+                idMax=i;
+            }
+
+
+        }
+
+        printf("\nEl cliente que tiene mas prestamos saldados es: \n");
+        encabezadoInfoClientesSaldados();
+        listarClientePrestamosSaldados(vecClientes[idMax],vecPrestamos,tamPrestamos);
+        printf("\n con %d prestamos saldados\n",maximo);
+    }
+    else
+    {
+        mensaje("\nNo hay prestamos saldados\n");
+    }
+
+}
+
+
+void prestamosCuotas(ePrestamos vecPrestamos[],eClientes vecClientes[],int tamPrestamos,int tamClientes)
+{
+    int importe;
+    int verifico=-1;
+    importe=inputInt("\nIngrese cuota a buscar: \n");
+    while(importe>48 && importe<0)
+    {
+        mensaje("\nDebe ingresar una cuota valida\n");
+        importe=inputInt("\nIngrese cuota a buscar: \n");
+
+    }
+    encabezadoInfoPrestamo();
+    for(int i=0; i<tamPrestamos; i++)
+    {
+        if(vecPrestamos[i].prestamoCuotas==importe && importe<48 && importe>0 && vecPrestamos[i].prestamoEstado==1 && vecPrestamos[i].isEmpty==0)
+        {
+            listarPrestamo(vecPrestamos[i],vecClientes,tamClientes);
+            verifico=1;
+        }
+    }
+
+    if(verifico==-1)
+    {
+        mensaje("\nNo se ha encontrado prestamo alguno con la cuota indicado.\n");
+    }
+}
+
 int menuInformesPrestamos()
 {
     int opcion;
-    printf("\n1-Prestamos mayores a 1000\n2-Salir\n");
-    opcion=inputValidInt("\nIngrese una opcion: ","\nIngrese una opcion valida: \n",1,2,3);
+    printf("\n1-Prestamos mayores a 1000\n2-Prestamos por cuotas\n3-Salir");
+    opcion=inputValidInt("\nIngrese una opcion: ","\nIngrese una opcion valida: \n",1,3,3);
     return opcion;
 }

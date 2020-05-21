@@ -68,8 +68,8 @@ int altaCliente(eClientes vecClientes[],int tamClientes)
     }
     else
     {
-        utnGetString(name,NOMBRETAM,3,"\nIngrese nombre del cliente: \n","\nIngrese un nombre valido\n");
-        utnGetString(lastName,APELLIDOTAM,3,"\nIngrese apellido del cliente: \n","\nIngrese un apellido valido\n");
+        utnGetString(name,NOMBRETAM,5,"\nIngrese nombre del cliente: \n","\nIngrese un nombre valido\n");
+        utnGetString(lastName,APELLIDOTAM,5,"\nIngrese apellido del cliente: \n","\nIngrese un apellido valido\n");
         cuilValido(cuil,"\nIngrese numero de cuil del cliente.(Ejemplo 00-11111111-22): \n","\nIngrese un cuil valido por favor: \n",5);
         vecClientes[emptySpace]=nuevoCliente(clienteId,name,lastName,cuil);
 
@@ -95,14 +95,16 @@ int clientesActivos(eClientes vecClientes[],int tamClientes)
 
 void encabezadoInfoClientes()
 {
-    mensaje("    ID      NOMBRE      APELLIDO      CUIL          CANTIDAD PRESTAMOS ACTIVOS ");
-
+    mensaje("-------------------------------------------------------------------------------\n");
+    mensaje("    ID      NOMBRE      APELLIDO      CUIL          CANTIDAD PRESTAMOS ACTIVOS \n");
+    mensaje("-------------------------------------------------------------------------------");
 }
 
 void encabezadoInfoClientesSaldados()
 {
-    mensaje("    ID      NOMBRE    APELLIDO       CUIL          CANTIDAD PRESTAMOS SALDADOS");
-
+    mensaje("------------------------------------------------------------------------------\n");
+    mensaje("    ID      NOMBRE    APELLIDO       CUIL          CANTIDAD PRESTAMOS SALDADOS\n");
+    mensaje("------------------------------------------------------------------------------");
 }
 
 int getCuilCliente(eClientes vecClientes[],int tamClientes,int idCliente,char* cuilCliente)
@@ -163,7 +165,7 @@ void listarClientes(eClientes vecClientes[],int tamClientes,ePrestamos vecPresta
     }
 }
 
-int contTotalClientes(eClientes vecClientes[],int tamClientes)
+/*int contTotalClientes(eClientes vecClientes[],int tamClientes)
 {
 
     int contTotal=0;
@@ -176,7 +178,7 @@ int contTotalClientes(eClientes vecClientes[],int tamClientes)
         }
     }
     return contTotal;
-}
+}*/
 
 int primerIdRegistrado(eClientes vecClientes[],int tamClientes,int* primerId)
 {
@@ -203,7 +205,7 @@ int modMenu()
     return option;
 }
 
-int modCliente(eClientes vecClientes[],int tamClientes,int id,ePrestamos vecPrestamos[],int tamPrestamos)
+int modCliente(eClientes vecClientes[],int tamClientes,ePrestamos vecPrestamos[],int tamPrestamos)
 {
     int verifico=1;
     int idCliente=0;
@@ -250,7 +252,7 @@ int modCliente(eClientes vecClientes[],int tamClientes,int id,ePrestamos vecPres
                 break;
 
             }
-            if(seguir=='n' || seguir=='N')
+            if(seguir=='n')
             {
                 salida=0;
             }

@@ -230,7 +230,7 @@ void cuilValido(char* cadena,char* mensaje,char* mensajeError,int reintentos)
 
 int getString(char* pAux,int limit)
 {
-    char auxString[1000];
+    char auxString[20];
     int returnValue =-1;
     if (pAux != NULL && limit >0)
     {
@@ -252,13 +252,13 @@ int getString(char* pAux,int limit)
 
 int utnGetString(char *pAux,int limit,int retries,char* mensaje,char*mensajeError)
 {
-    int returnValue=-1;
+    int returnValue=0;
     char auxString[limit];
-    if(pAux!=NULL && limit >0 && retries >=0)
+    if(pAux!=NULL && limit >0 && mensaje !=NULL && mensajeError!=NULL &&retries >=0)
     {
         do
         {
-            retries--;
+            fflush(stdin);
             printf("%s",mensaje);
             if(getString(auxString,limit)==0 && sonLetras(auxString)==0)
             {
